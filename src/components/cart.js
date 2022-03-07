@@ -3,11 +3,12 @@ import shampo from "../images/shampoo1.png";
 import Moisturizer from "../images/moisturixer.jpg"; 
 import Shoe from "../images/shoes.jpg"; 
 import Perfume from "../images/perfume.jpg"; 
-import Header from "../layouts/header";
+import Header from "../layouts/header"; 
+import "../components/styles/cart.css";
 class Cart extends Component {
     render() {
         return(
-            <div> 
+            <div className="cartList"> 
                
                 <h3> Your Cart items {this.props.detials.cartItems}</h3> 
                 {/* shampoo */} 

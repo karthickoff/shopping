@@ -1,0 +1,8 @@
+.cartList{
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+} 
+.card{
+    margin: 10px !important;
+}
