@@ -52,7 +52,8 @@ class Cart extends Component {
                     </div>
                 </div>
                 :""}
-                </div>
+                </div> 
+               {this.props.detials.cartItems ?<button className="btn btn-secondary">Place Order</button>:''}
             </div>
         )
     }
