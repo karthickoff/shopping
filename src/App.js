@@ -15,6 +15,8 @@ class App extends Component{
       MoisturizerCount:0,
     } 
     this.IncCartItems=this.IncCartItems.bind(this);
+    this.DecCartItems=this.DecCartItems.bind(this);
+
   } 
   IncCartItems(e) { 
     console.log(e.target.name);
@@ -34,6 +36,23 @@ class App extends Component{
         break  
     }
   
+  }  
+  DecCartItems(e){
+    this.setState({cartItems:this.state.cartItems - 1}) 
+    switch(e.target.name){
+      case 'perfume':
+        this.setState({perfumeCount:this.state.perfumeCount-1}) 
+        break 
+      case 'shoe' :
+        this.setState({shoesCount:this.state.shoesCount-1}) 
+        break 
+      case 'shampo':
+        this.setState({shampooCount:this.state.shampooCount-1}) 
+        break  
+      case 'moisturizer':
+        this.setState({MoisturizerCount:this.state.MoisturizerCount-1}) 
+        break  
+    }
   }
   render(){
     return( 
@@ -41,7 +60,7 @@ class App extends Component{
         <Route path='/'><Header cartItems={this.state.cartItems}/></Route>
       <Switch>
         <Route path='/items' > <Items handle={this.IncCartItems}/> </Route>
-        <Route path='/cart' > <Cart detials={this.state} /></Route>
+        <Route path='/cart' > <Cart detials={this.state} handleRemove={this.DecCartItems} handleAdd={this.IncCartItems} /></Route>
       </Switch> 
        {/* <div> 
       
